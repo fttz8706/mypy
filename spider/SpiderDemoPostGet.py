@@ -5,7 +5,7 @@ import urllib2
 # values = {"username":"123@126.com","password":"xxxx"}
 # data = urllib.urlencode(values)
 # url = "http://passport.csdn.net/account/login"
-# request = urllib2.Request(url,data)
+# request = urllib2.Request(url,data,{"timeout": 1})
 # response = urllib2.urlopen(request)
 # print response.read()
 
@@ -17,6 +17,6 @@ values["password"] = "xxx"
 data = urllib.urlencode(values)
 url = "http://passport.csdn.net/account/login"
 geturl = url + "?" + data
-request = urllib2.Request(geturl)
+request = urllib2.Request(geturl, None, {"timeout": 1})
 response = urllib2.urlopen(request)
 print response.read()
